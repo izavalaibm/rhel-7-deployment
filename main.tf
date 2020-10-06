@@ -20,7 +20,7 @@ locals {
 }
 
 module "deployVM" {
-  source = "vm_deployment"
+  source = "./vm_deployment"
 
   #######
   vsphere_datacenter                 = var.vsphere_datacenter
