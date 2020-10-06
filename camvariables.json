@@ -1,0 +1,204 @@
+{
+    "terraform_version": "~> 0.12.0",
+    "input_datatypes": [
+      {
+        "name": "vm_info",
+        "label": "OpenShift platform information"
+      }
+    ], 
+    "output_datatypes": [
+    ],
+    "input_groups": [
+      {
+        "name": "vm_info",
+        "label": "VM Specifications"
+      }
+    ],
+    "template_input_params": [
+      {
+        "name": "vm_ip",
+        "label": "Public IP Address",
+        "type": "string",
+        "default": "${vm_info.vm_ip}",
+        "description": "Infrastructure Node Public IP Address. This IP address must have a mapping to the OCP cluster app URL in your DNS or in your local etc hosts file.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_hostname",
+        "label": "VM Hostname",
+        "type": "string",
+        "default": "${vm_info.vm_hostname}",
+        "description": "VM Hostname.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_ipv4_gateway",
+        "label": "IPv4 Gateway",
+        "type": "string",
+        "description": "IPv4 Gateway Address for network customization on the virtual machine.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_ipv4_gateway}",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_ipv4_prefix_length",
+        "label": "IPv4 Netmask (CIDR)",
+        "type": "string",
+        "description": "Integer value between 1 and 32 for the prefix length (CIDR) to use when statically assigning an IPv4 address",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_ipv4_prefix_length}",
+        "regex": "^([8-9]|[1-2][0-9]|3[0-2])$",
+        "regexdesc": "Provide an integer value between 1 and 32",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_template",
+        "label": "VM template to use",
+        "type": "string",
+        "description": "Infrastructure Node OS Image Template Name. If it is in a folder then include folder name as follows 'folder_name/image_template_name'",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_template}",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_network_adapter_type",
+        "default":"${vm_info.vm_network_adapter_type}",
+        "description": "Network adapter type for VM",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Private Network Adapter Type for infrastructure and OCP cluster VM",
+        "hidden": true,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vsphere_network",
+        "label": "Network name for VM",
+        "default":"${vm_info.vsphere_network}",
+        "type": "string",
+        "description": "Private vSphere Network name for infrastructure and OCP cluster VM.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vsphere_datastore",
+        "default":"${vm_info.vsphere_datastore}",
+        "description": "Virtual machine datastore name",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Datastore Name",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_clone_timeout",
+        "label": "Virtual Machine Clone Timeout",
+        "type": "string",
+        "description": "The timeout, in minutes, to wait for the virtual machine clone to complete.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_clone_timeout}",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_dns_servers",
+        "label": "DNS Servers",
+        "type": "list",
+        "description": "A list of DNS servers to add on the virtual machine.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_dns_servers}",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_dns_suffixes",
+        "label": "DNS Suffixes",
+        "type": "list",
+        "description": "A list of DNS search domains to add to the DNS configuration on the virtual machine.",
+        "required": true,
+        "secured": false,
+        "hidden": false,
+        "immutable": false,
+        "default": "${vm_info.vm_dns_suffixes}",
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_domain_name",
+        "default":"${vm_info.vm_domain_name}",
+        "description": "Virtual machine domain name.",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Virtual Machine Domain Name",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_folder",
+        "default":"${vm_info.vm_folder}",
+        "description": "vSphere folder name to create the infrastructure virtual vachine.",
+        "type": "string",
+        "required": false,
+        "secured": false,
+        "label": "Infrastructure VM Folder Name",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vsphere_datacenter",
+        "default":"${vm_info.vsphere_datacenter}",
+        "description": "The name of a datacenter in which to create the virtual machine and other assets.",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Datacenter Name",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vsphere_resource_pool",
+        "default":"${vm_info.vsphere_resource_pool}",
+        "description": "Name of the default resource pool for the cluster. Must be specified as 'cluster_name/resource_pool'",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Resource Pool Name",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      }
+    ],
+    "template_output_params": [
+
+    ]
+  }

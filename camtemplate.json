@@ -1,0 +1,62 @@
+{
+    "name": "VM Deployment in vSphere for Terrafrom 0.12.x",
+    "description": "This template will deploy a VM in vSphere",
+    "version": "7",
+    "imageUrl": "",
+    "image": "",
+    "type": "prebuilt",
+    "status": "active",
+    "manifest": {
+      "template_type": "Terraform",
+      "template_format": "HCL",
+      "template_provider": "VMware vSphere",
+      "template": {
+        "templateData": "",
+        "templateVariables": "",
+        "templateOutput": ""
+      },
+      "template_source": {
+        "githubRepoUrl": "",
+        "githubAccessToken": "",
+        "relativePathToTemplateFolder": "terraform12/vmware/terraform",
+        "templateFileName": "main.tf"
+      }
+    },
+    "metadata": {
+      "displayName": "VM Deployment in vSphere",
+      "providerDisplayName": "VMware vSphere",
+      "longDescription": "This template will deploy a VM in vSphere",
+      "bullets": [{
+    "title": "Clouds",
+    "description": " VMware vSphere<br>"},
+  {
+    "title": "Operating Systems Supported",
+    "description": "RHEL 7"},
+  {
+    "title": "Topology",
+    "description": "Medium/HA<br>"},
+  {
+    "title": "Software Deployed",
+    "description": "OpenShift<br>"},
+  {
+    "title": "Default Virtual Machine Settings",
+    "description": " vCPU 8, Memory (GB) 16, Disk (GB) 400<br>"},
+  {
+    "title": "Usage and Special Notes",
+    "description": "This template runs on Terraform 0.12.x engine."
+  }
+  ],
+      "featuredImageUrl": "",
+      "imageUrl": "",
+      "mediumImageUrl": "",
+      "smallImageUrl": "",
+      "documentationUrl": "",
+      "termsUrl": "",
+      "media": [
+      ]
+    },
+    "toolchain": {
+      "git": "https://github.com/ibmcam/cam-toolchain"
+    }
+  }
+  
