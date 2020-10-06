@@ -34,7 +34,6 @@ module "deployVM" {
   vm_ipv4_prefix_length              = var.vm_ipv4_prefix_length
   vm_private_adapter_type            = var.vm_network_adapter_type
   vm_private_network_interface_label = var.vsphere_network
-  vm_disk1_datastore                 = var.vsphere_datastore
   vm_dns_servers                     = var.vm_dns_servers
   vm_dns_suffixes                    = var.vm_dns_suffixes
   vm_clone_timeout                   = var.vm_clone_timeout
