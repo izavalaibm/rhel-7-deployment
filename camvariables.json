@@ -16,18 +16,6 @@
     ],
     "template_input_params": [
       {
-        "name": "vm_ip",
-        "label": "Public IP Address",
-        "type": "string",
-        "default": "${vm_info.vm_ip}",
-        "description": "Infrastructure Node Public IP Address. This IP address must have a mapping to the OCP cluster app URL in your DNS or in your local etc hosts file.",
-        "required": true,
-        "secured": false,
-        "hidden": false,
-        "immutable": false,
-        "group_name": "vm_info"
-      },
-      {
         "name": "vm_hostname",
         "label": "VM Hostname",
         "type": "string",
@@ -49,20 +37,6 @@
         "hidden": false,
         "immutable": false,
         "default": "${vm_info.vm_ipv4_gateway}",
-        "group_name": "vm_info"
-      },
-      {
-        "name": "vm_ipv4_prefix_length",
-        "label": "IPv4 Netmask (CIDR)",
-        "type": "string",
-        "description": "Integer value between 1 and 32 for the prefix length (CIDR) to use when statically assigning an IPv4 address",
-        "required": true,
-        "secured": false,
-        "hidden": false,
-        "immutable": false,
-        "default": "${vm_info.vm_ipv4_prefix_length}",
-        "regex": "^([8-9]|[1-2][0-9]|3[0-2])$",
-        "regexdesc": "Provide an integer value between 1 and 32",
         "group_name": "vm_info"
       },
       {
@@ -199,6 +173,15 @@
       }
     ],
     "template_output_params": [
+      {
+        "name": "vm-ip",
+        "label": "Ip address for vm",
+        "description": "Outputs the IP address for the vm created",
+        "type": "string",
+        "secured": true,
+        "hidden": false,
+        "immutable": false
+      }
 
     ]
   }

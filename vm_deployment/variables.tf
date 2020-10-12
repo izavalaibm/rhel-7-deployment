@@ -63,16 +63,6 @@ variable "vm_ipv4_gateway" {
   description = "IPv4 gateway for vNIC configuration"
 }
 
-variable "vm_ipv4_address" {
-  description = "IPv4 address for vNIC configuration"
-  type        = string
-}
-
-variable "vm_ipv4_prefix_length" {
-  description = "IPv4 prefix length for vNIC configuration. The value must be a number between 8 and 32"
-}
-
-
 variable "vm_clone_timeout" {
   description = "The timeout, in minutes, to wait for the virtual machine clone to complete."
   default     = "30"

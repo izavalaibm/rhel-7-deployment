@@ -15,9 +15,6 @@ variable "vm_hostname" {
   type = string
 }
 
-variable "vm_ip" {
-  type = string
-}
 
 variable "vm_template" {
   type = string
@@ -28,10 +25,6 @@ variable "vm_domain_name" {
 }
 
 variable "vm_ipv4_gateway" {
-  type = string
-}
-
-variable "vm_ipv4_prefix_length" {
   type = string
 }
 

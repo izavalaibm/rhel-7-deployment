@@ -30,8 +30,6 @@ module "deployVM" {
   vm_domain                          = var.vm_domain_name
   vm_folder                          = var.vm_folder
   vm_ipv4_gateway                    = var.vm_ipv4_gateway
-  vm_ipv4_address                    = var.vm_ip
-  vm_ipv4_prefix_length              = var.vm_ipv4_prefix_length
   vm_private_adapter_type            = var.vm_network_adapter_type
   vm_private_network_interface_label = var.vsphere_network
   vm_dns_servers                     = var.vm_dns_servers
