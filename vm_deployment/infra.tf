@@ -14,9 +14,9 @@ resource "vsphere_virtual_machine" "vm" {
     timeout       = var.vm_clone_timeout
     customize {
       linux_options {
-        domain    = var.vm_domain
+        domain = var.vm_domain
         host_name = var.vm_name
-
+      }
         network_interface {
 
           ipv4_netmask = 24
