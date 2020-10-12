@@ -3,6 +3,8 @@ output "dependsOn" {
   description = "Output Parameter set when the module execution is completed"
 }
 
-output "vm-ip"{
+output "vm-ip" {
   value = vsphere_virtual_machine.vm.default_ip_address
+  description = "vm ip"
 }
+
