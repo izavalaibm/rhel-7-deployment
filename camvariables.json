@@ -178,7 +178,7 @@
         "label": "Ip address for vm",
         "description": "Outputs the IP address for the vm created",
         "type": "string",
-        "secured": true,
+        "secured": false,
         "hidden": false,
         "immutable": false
       }
