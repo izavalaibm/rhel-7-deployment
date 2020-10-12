@@ -16,7 +16,11 @@ resource "vsphere_virtual_machine" "vm" {
       linux_options {
         domain    = var.vm_domain
         host_name = var.vm_name
-      }
+
+        network_interface {
+
+          ipv4_netmask = 24
+        }
 
       ipv4_gateway    = var.vm_ipv4_gateway
       dns_suffix_list = var.vm_dns_suffixes
