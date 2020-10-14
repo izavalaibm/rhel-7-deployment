@@ -1,9 +1,17 @@
+
+/*data "vsphere_virtual_machine" "temp_vm" {
+  name          = var.vm_name
+  datacenter_id = data.vsphere_datastore.vsphere_datastore.id
+  default       = null
+}*/
+
 resource "vsphere_virtual_machine" "vm" {
+
 
   name             = var.vm_name
   folder           = var.vm_folder
-  num_cpus         = "8"
-  memory           = "16384"
+  num_cpus         = var.vm_cpu
+  memory           = tostring(tonumber(var.vm_memory) * 1024)
   resource_pool_id = data.vsphere_resource_pool.vsphere_resource_pool.id
   datastore_id     = data.vsphere_datastore.vsphere_datastore.id
   guest_id         = data.vsphere_virtual_machine.vm_template.guest_id
@@ -37,7 +45,7 @@ resource "vsphere_virtual_machine" "vm" {
 
   disk {
     label          = "${var.vm_name}.vmdk"
-    size           = "200"
+    size           = var.vm_storage
     keep_on_remove = "false"
     datastore_id   = data.vsphere_datastore.vsphere_datastore.id
   }

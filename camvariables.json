@@ -136,6 +136,42 @@
         "group_name": "vm_info"
       },
       {
+        "name": "vm_cpu",
+        "default":"${vm_info.vm_cpu}",
+        "description": "Virtual machine cpu.",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Virtual Machine CPU",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_memory",
+        "default":"${vm_info.vm_memory}",
+        "description": "Virtual machine memory.",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Virtual Machine Memory",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
+        "name": "vm_storage",
+        "default":"${vm_info.vm_storage}",
+        "description": "Virtual machine Storage.",
+        "type": "string",
+        "required": true,
+        "secured": false,
+        "label": "Virtual Machine Storage",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
+      },
+      {
         "name": "vm_folder",
         "default":"${vm_info.vm_folder}",
         "description": "vSphere folder name to create the infrastructure virtual vachine.",

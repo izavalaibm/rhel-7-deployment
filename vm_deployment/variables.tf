@@ -33,6 +33,18 @@ variable "vm_name" {
   type = string
 }
 
+variable "vm_cpu" {
+  type = string
+}
+
+variable "vm_memory"{
+  type = string
+}
+
+variable "vm_storage"{
+  type = string
+}
+
 variable "vm_folder" {
   description = "Target vSphere folder for virtual machine"
 }

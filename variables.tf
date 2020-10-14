@@ -15,6 +15,17 @@ variable "vm_hostname" {
   type = string
 }
 
+variable "vm_cpu" {
+  type = string
+}
+
+variable "vm_memory" {
+  type = string
+}
+
+variable "vm_storage" {
+  type = string
+}
 
 variable "vm_template" {
   type = string
