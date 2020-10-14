@@ -36,4 +36,7 @@ module "deployVM" {
   vm_dns_suffixes                    = var.vm_dns_suffixes
   vm_clone_timeout                   = var.vm_clone_timeout
   vm_datastore                       = var.vsphere_datastore
+  vm_cpu                             = var.vm_cpu
+  vm_memory                          = var.vm_memory
+  vm_storage                         = var.vm_storage
 }
