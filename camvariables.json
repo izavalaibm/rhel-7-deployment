@@ -206,6 +206,18 @@
         "hidden": false,
         "immutable": false,
         "group_name": "vm_info"
+      },
+      {
+        "name": "size",
+        "default":"none",
+        "description": "Size of deployed resource",
+        "type": "string",
+        "required": false,
+        "secured": false,
+        "label": "Size of resource",
+        "hidden": false,
+        "immutable": false,
+        "group_name": "vm_info"
       }
     ],
     "template_output_params": [
@@ -213,6 +225,15 @@
         "name": "vm-ip",
         "label": "Ip address for vm",
         "description": "Outputs the IP address for the vm created",
+        "type": "string",
+        "secured": false,
+        "hidden": false,
+        "immutable": false
+      },
+      {
+        "name": "size",
+        "label": "size of deployment",
+        "description": "size of deployment",
         "type": "string",
         "secured": false,
         "hidden": false,

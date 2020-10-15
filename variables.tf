@@ -59,3 +59,8 @@ variable "vm_folder" {
 variable "vsphere_datastore" {
   type = string
 }
+
+variable "size" {
+  type = string
+  default = "none"
+}
